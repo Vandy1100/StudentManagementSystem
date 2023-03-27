@@ -1,5 +1,4 @@
 package com.system.student;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -39,7 +38,11 @@ class Student{
             try {
                 strId=sc.next();
                 id=Integer.parseInt(strId);
-                valueId=true;
+                if(id>0){
+                    valueId=true;
+                }else{
+                    System.out.println("Invalid Value Input!! Please Enter ID Again!!");
+                }
             }catch (Exception e){
                 System.out.println("ERROR!! ID can only be Integer..!");
             }
@@ -47,8 +50,20 @@ class Student{
         sc.nextLine();
         System.out.println("Enter Student Name :");
         name=sc.next();
-        System.out.println("Enter Student Gender :");
-        gender=sc.next();
+        boolean checkGender=false;
+        do{
+            System.out.println("Enter Student Gender (Male/Female) :");
+            try {
+                gender=sc.next();
+                if(gender.equalsIgnoreCase("Male") || gender.equalsIgnoreCase("Female")){
+                    checkGender=true;
+                }else
+                {System.out.println("Wrong Input!! Please Enter (Male/Female)..!");
+                }
+            }catch (NumberFormatException e){
+                System.out.println("ERROR!! ID can only be String..!");
+            }
+        }while (!checkGender);
         boolean valueAge= false;
         String strAge;
         do{
@@ -56,9 +71,13 @@ class Student{
             try {
                 strAge=sc.next();
                 age=Integer.parseInt(strAge);
-                valueAge=true;
+                if(age>0){
+                    valueAge=true;
+                }else{
+                    System.out.println("Invalid Value Input!! Please Enter ID Again!!");
+                }
             }catch (Exception e){
-                System.out.println("ERROR!! Age can only be Integer..!");
+                System.out.println("ERROR!! ID can only be Integer..!");
             }
         }while (!valueAge);
         sc.nextLine();
@@ -71,7 +90,11 @@ class Student{
             try {
                 strScore=sc.next();
                 score=Double.parseDouble(strScore);
-                valueScore=true;
+                if(score>0){
+                    valueScore=true;
+                }else{
+                    System.out.println("Invalid Value Input!! Please Enter Score Again!!");
+                }
             }catch (Exception e){
                 System.out.println("ERROR!! Score Can Not Be String..!");
             }
@@ -111,8 +134,20 @@ class Student{
     void updateStudent(Scanner sc){
         System.out.println("Enter Update Student Name :");
         name=sc.next();
-        System.out.println("Enter Update Student Gender :");
-        gender=sc.next();
+        boolean checkGender=false;
+        do{
+            System.out.println("Enter Update Student Gender (Male/Female) :");
+            try {
+                gender=sc.next();
+                if(gender.equalsIgnoreCase("Male") || gender.equalsIgnoreCase("Female")){
+                     checkGender=true;
+                }else
+                {System.out.println("Wrong Input!! Please Enter (Male/Female)..!");
+                }
+            }catch (NumberFormatException e){
+                System.out.println("ERROR!! ID can only be String..!");
+            }
+        }while (!checkGender);
         boolean valueAge= false;
         String strAge;
         do{
@@ -120,7 +155,11 @@ class Student{
             try {
                 strAge=sc.next();
                 age=Integer.parseInt(strAge);
-                valueAge=true;
+                if(age>0){
+                    valueAge=true;
+                }else{
+                    System.out.println("Invalid Value Input!! Please Enter ID Again!!");
+                }
             }catch (Exception e){
                 System.out.println("ERROR!! Age can only be Integer..!");
             }
@@ -135,7 +174,11 @@ class Student{
             try {
                 strScore=sc.next();
                 score=Double.parseDouble(strScore);
-                valueScore=true;
+                if(score>0){
+                    valueScore=true;
+                }else{
+                    System.out.println("Invalid Value Input!! Please Enter Score Again!!");
+                }
             }catch (Exception e){
                 System.out.println("ERROR!! Score Can Not Be String..!");
             }
