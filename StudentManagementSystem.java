@@ -1,5 +1,6 @@
 package com.system.student;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
 
 class Student{
@@ -187,7 +188,7 @@ class Student{
 
     //Output Value Student
     void outputStudent(){
-        System.out.println("id="+getId()+", Name="+getName()+", Gender="+getGender()+", Age="+getAge()+", ClassName="+getClassroom()+", Score="+getScore());
+        System.out.println(getId()+"\t"+getName()+"\t"+getGender()+"\t"+getAge()+"\t"+getClassroom()+"\t\t"+getScore());
     }
     void pressKey(){
         Scanner sc = new Scanner(System.in);
@@ -433,6 +434,8 @@ public class StudentManagementSystem {
                     //Show Student Information
                     case 5:{
                         System.out.println("=========Show Student Information=========");
+                        System.out.println("ID\tName\tGender\tAge\tClassRoom\tScore");
+                        System.out.println("-----------------------------------------");
                         Student student = new Student();
                         for(int i=0;i< list.size();i++){
                             list.get(i).outputStudent();
